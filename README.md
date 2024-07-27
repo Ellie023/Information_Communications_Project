@@ -2,7 +2,6 @@
 Socket 통신을 활용하여 Tic-Tac-Toe game을 구현한다.
 
 <h2>2. Project를 위한 배경 지식</h2>
-
 TCP는 어플리케이션 간의 데이터 전송을 위해서 안정적인 connection을 제공한다. HTTP 는 어플
 리케이션 안에서 돌아가고 어플리케이션 layer는 Client - Server Paradigm 과 Peer - Peer 
 Architecture가 있다. client - server Paradigm은 server가 중개 역할을 하며 통신을 하는 것이고, 
@@ -22,7 +21,8 @@ Socket 통신의 흐름은 다음과 같다. 서버는 Socket을 생성하고 ip
 ‘accept’로 클라이언트와 연결 후 데이터를 송수신한다. 연결이 끝나면 Socket을 닫는다. 클라이언
 트는 Socket을 생성하고 서버에 설정된 IP, Port 정보로 연결을 시도한다. ‘accept()’로 클라이언트의 
 socket descriptor 반환한다. 데이터를 송수신 후 연결이 끝나면 Socket을 닫는다.   
-<h3>3. project 가정</h3> 
+
+<h2>3. project 가정</h2> 
 온라인으로 Tic-Tac-Toe game을 할려고 한다. 플레이어는 2명이다. 3X3 board가 주어지고, 먼저 플
 레이를 하는 사람이 ‘X’ 나중에 플레이 하는 사람이 ‘O’를 가지고 보드에 표시하게 된다. 플레이어
 들은 번갈아면서 한칸씩 보드에 표시하게 되고 가로, 세로, 대각선으로 3줄을 만든 플레이어가 우
@@ -38,7 +38,6 @@ Protocal은 ETTTP(HTTP의 가짜버전)로 정하였다. Server는 선 플레이
 5) 3줄이 완성되어서 게임이 종료되면 승패 여부를 각자 창에 표시한다. 
 
 <h2>4. Project에서 중요한 파트</h2>
-
 1) Server가 선 플레이어를 정해서 Client에게 메시지를 송신한다. 
 (1) Server 가 랜덤으로 숫자를 선택한다.(0 - server, 1 – client) 
 (2) Server가 숫자를 포함한 SEND 메세지를 Client에게 송신한다. 
